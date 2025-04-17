@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Developer Portfolio</title>
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --dark: #2D2B55;
+            --light: #F8F8F8;
+            --accent: #FF6B6B;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #5952d4;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .work-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .work-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .work-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .work-content {
+            padding: 20px;
+        }
+        
+        .work-content h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .skill-tag {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .contact {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Leon Hodgkinson</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-itch-io"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Crafting Immersive Gaming Experiences</h1>
+            <p>Freelance game developer with a passion for creating engaging, innovative games that push boundaries and captivate players.</p>
+            <a href="#contact" class="btn">Let's Work Together</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="/api/placeholder/400/400" alt="Game Developer Profile" />
+                </div>
+                <div class="about-text">
+                    <h3>Hello, I'm Leon</h3>
+                    <p>With over 5 years of experience in game development, I specialize in creating captivating gaming experiences that blend innovative gameplay mechanics with stunning visuals and immersive storytelling.</p>
+                    <p>I'm passionate about pushing the boundaries of what's possible in interactive entertainment, whether working on indie projects or collaborating with established studios. My technical expertise and creative vision allow me to bring unique gaming concepts to life across multiple platforms.</p>
+                    <p>I approach each project with a player-first mindset, focusing on creating experiences that are not only technically sound but also genuinely enjoyable and memorable for the end user.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" style="background-color: #f0f0f0;">
+        <div class="container">
+            <h2>Previous Work</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div class="work-img">
+                        <img src="/api/placeholder/350/200" alt="Game Project 1" />
+                    </div>
+                    <div class="work-content">
+                        <h3>Cosmic Defender</h3>
+                        <p><strong>Role:</strong> Lead Developer</p>
+                        <p>A space-themed action shooter with procedurally generated levels and a unique weapon customization system. Built with Unity for PC and consoles.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-img">
+                        <img src="/api/placeholder/350/200" alt="Game Project 2" />
+                    </div>
+                    <div class="work-content">
+                        <h3>Mystic Chronicles</h3>
+                        <p><strong>Role:</strong> Gameplay Programmer</p>
+                        <p>An RPG adventure featuring a unique magic system and branching storylines. Developed the combat mechanics and quest system using Unreal Engine.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-img">
+                        <img src="/api/placeholder/350/200" alt="Game Project 3" />
+                    </div>
+                    <div class="work-content">
+                        <h3>Pixel Racers</h3>
+                        <p><strong>Role:</strong> Solo Developer</p>
+                        <p>A retro-inspired racing game with modern physics and multiplayer capabilities. Created using custom-built engine for mobile platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">Unreal Engine</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Blender</span>
+                <span class="skill-tag">Game Design</span>
+                <span class="skill-tag">2D/3D Graphics</span>
+                <span class="skill-tag">Multiplayer Networking</span>
+                <span class="skill-tag">Performance Optimization</span>
+                <span class="skill-tag">Level Design</span>
+                <span class="skill-tag">Shader Programming</span>
+            </div>
+            
+            <h3 style="text-align: center; margin-top: 50px;">Work Experience Timeline</h3>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="border-left: 3px solid var(--primary); padding: 20px; margin: 20px 0; position: relative;">
+                    <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: var(--primary); border-radius: 50%;"></div>
+                    <h4>Senior Game Developer at Indie Studio X</h4>
+                    <p><em>2022 - Present</em></p>
+                    <p>Leading development on two major titles, managing a team of five developers, and implementing advanced gameplay features.</p>
+                </div>
+                
+                <div style="border-left: 3px solid var(--primary); padding: 20px; margin: 20px 0; position: relative;">
+                    <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: var(--primary); border-radius: 50%;"></div>
+                    <h4>Game Developer at Mobile Gaming Inc.</h4>
+                    <p><em>2020 - 2022</em></p>
+                    <p>Developed and maintained three successful mobile games with over 1 million combined downloads. Specialized in optimization and monetization strategies.</p>
+                </div>
+                
+                <div style="border-left: 3px solid var(--primary); padding: 20px; margin: 20px 0; position: relative;">
+                    <div style="position: absolute; left: -10px; top: 0; width: 20px; height: 20px; background: var(--primary); border-radius: 50%;"></div>
+                    <h4>Junior Developer at AAA Games Studio</h4>
+                    <p><em>2018 - 2020</em></p>
+                    <p>Contributed to two major console titles, focusing on gameplay mechanics and physics implementation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Interested in working together? Feel free to reach out and let's discuss your project.</p>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Leon Hodgkinson. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
